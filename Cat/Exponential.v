@@ -94,7 +94,8 @@ Proof.
 Qed.
 
 (** The exponential for category of categories (functor categories). *)
-Program Definition Cat_Exponential (C C' : Cat) : (C ⇑ C')%object :=
+Set Printing Universes.
+Program Definition Cat_Exponential@{i j k l m n max} (C C' : Cat@{k l i j}) : (Exponential@{_ _ max} C C')%object :=
 {|
   exponential := Func_Cat C C';
   eval := Exp_Cat_Eval C C';

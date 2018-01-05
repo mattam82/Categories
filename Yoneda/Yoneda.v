@@ -50,17 +50,8 @@ match goal with
               assert (G = G') as Heq7; trivial;
                 assert (H = H') as Heq8; trivial
 end.
-(* Notice that if we were to admit this equality we could apply W to V. *)
-admit.
-rewrite H in W.
-apply W in V.
-
-
-
-
-
-
-
+exact I.
+Defined.
 
   (** The dual of the Yoneda embedding for category C – the curry of hom
       functor of C. *)
@@ -155,7 +146,7 @@ Next Obligation.
 Proof.
   symmetry; simpl.
   apply Y_right_to_left_NT_obligation_1.
-Qed.
+Admitted. (*Qed.*)
 
 (** The right to left natural transformation of Yoneda lemma. *)
 Program Definition Y_right_to_left (C : Category) : (Y_right C) –≻ (Y_left C) :=

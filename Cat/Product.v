@@ -10,7 +10,7 @@ From Categories Require Import Basic_Cons.Product.
 Local Notation "A × B" := (@Product Cat A B) : object_scope.
 
 (** Product in category of categories is imply the product of actegories *)
-Program Definition Cat_Products (C C' : Category) : (C × C')%object :=
+Program Definition Cat_Products@{i j k l} (C C' : Category@{i j}) : (@Product@{k l}) Cat@{k l i j} C C' :=
 {|
   product := (C × C')%category;
 

@@ -127,8 +127,8 @@ Notation "f '⁻¹'" := (Inverse_Isomorphism f) : isomorphism_scope.
 isomorphism. Left and right inverse properties follow straightforwardly.
 This is transitivty property for the equivalence relation of isomorphism
 on objects. *)
-Program Definition Isomorphism_Compose
-        {C : Category} {a b c : C} (I : a ≃ b) (I' : b ≃ c) : a ≃ c
+Program Definition Isomorphism_Compose@{i j}
+        {C : Category@{i j}} {a b c : C} (I : a ≃ b) (I' : b ≃ c) : a ≃ c
   :=
 {|
   iso_morphism := I' ∘ I;
